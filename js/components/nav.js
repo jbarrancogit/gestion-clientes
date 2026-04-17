@@ -35,4 +35,4 @@ function updateActiveNav(hash) {
   });
 }
 
-export { renderNav, updateActiveNav, NAV_ITEMS };
+export { renderNav, renderBottomNav, updateActiveNav, NAV_ITEMS };
