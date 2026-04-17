@@ -20,8 +20,17 @@ function renderNav(container) {
   `;
 }
 
+function renderBottomNav(container) {
+  container.innerHTML = NAV_ITEMS.map(item => `
+    <a class="bottom-nav-item" href="${item.hash}" data-route="${item.hash}">
+      <span class="nav-icon">${item.icon}</span>
+      <span>${item.label}</span>
+    </a>
+  `).join('');
+}
+
 function updateActiveNav(hash) {
-  document.querySelectorAll('.nav-item').forEach(el => {
+  document.querySelectorAll('.nav-item, .bottom-nav-item').forEach(el => {
     el.classList.toggle('active', el.dataset.route === hash);
   });
 }

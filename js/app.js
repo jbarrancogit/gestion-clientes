@@ -1,4 +1,4 @@
-import { renderNav, updateActiveNav } from './components/nav.js';
+import { renderNav, renderBottomNav, updateActiveNav } from './components/nav.js';
 import { renderDashboard } from './views/dashboard.js';
 import { renderPipeline } from './views/pipeline.js';
 import { renderClientes } from './views/clientes.js';
@@ -28,6 +28,7 @@ async function navigate() {
 }
 
 renderNav(navContainer);
+renderBottomNav(document.getElementById('bottom-nav'));
 window.addEventListener('hashchange', navigate);
 navigate();
 
