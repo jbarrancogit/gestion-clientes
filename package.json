@@ -1,0 +1,29 @@
+{
+  "name": "gestion-clientes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev": "npx serve . -p 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "dexie": "^4.4.2",
+    "sortablejs": "^1.15.7"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^29.0.2",
+    "vitest": "^4.1.4"
+  }
+}
