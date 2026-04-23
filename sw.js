@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gestion-clientes-v3';
+const CACHE_NAME = 'gestion-clientes-v4';
 const ASSETS = [
   './', './index.html', './css/styles.css',
   './js/app.js', './js/db.js', './js/urgency.js', './js/import.js',

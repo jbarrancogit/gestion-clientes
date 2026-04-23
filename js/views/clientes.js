@@ -114,7 +114,7 @@ async function renderDetail(container, clienteId) {
 
 async function renderClientes(container) {
   const params = new URLSearchParams(location.hash.split('?')[1] || '');
-  const detailId = parseInt(params.get('id'));
+  const detailId = params.get('id');
   if (detailId) return renderDetail(container, detailId);
 
   const clientes = await getClientes();

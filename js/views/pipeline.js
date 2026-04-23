@@ -57,7 +57,7 @@ async function renderPipeline(container) {
     new Sortable(col, {
       group: 'pipeline', animation: 150, ghostClass: 'sortable-ghost',
       onEnd: async (evt) => {
-        const cardId = parseInt(evt.item.dataset.id);
+        const cardId = evt.item.dataset.id;
         const newEstado = evt.to.dataset.estado;
         if (!cardId || !newEstado) return;
         await changeEstado(cardId, newEstado);
@@ -69,7 +69,7 @@ async function renderPipeline(container) {
   container.addEventListener('click', async (e) => {
     const advanceBtn = e.target.closest('[data-advance-id]');
     if (advanceBtn) {
-      const id = parseInt(advanceBtn.dataset.advanceId);
+      const id = advanceBtn.dataset.advanceId;
       const nuevoEstado = await advanceEstado(id);
       if (nuevoEstado) { showToast(`Avanzado a "${ESTADO_LABELS[nuevoEstado] || nuevoEstado}"`, 'success'); await renderPipeline(container); }
     }

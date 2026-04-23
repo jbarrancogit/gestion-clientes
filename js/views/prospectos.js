@@ -42,7 +42,7 @@ async function renderProspectos(container) {
   container.addEventListener('click', async (e) => {
     const btn = e.target.closest('[data-convert-id]');
     if (!btn) return;
-    const id = parseInt(btn.dataset.convertId);
+    const id = btn.dataset.convertId;
     const prospecto = await getClienteById(id);
     if (!prospecto) return;
 
