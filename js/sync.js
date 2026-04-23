@@ -42,14 +42,7 @@ async function signIn() {
   setStatus('signing-in');
   try {
     const provider = new firebase.auth.GoogleAuthProvider();
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
-      || window.navigator.standalone === true;
-    const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
-    if (isStandalone || isMobile) {
-      await auth.signInWithRedirect(provider);
-    } else {
-      await auth.signInWithPopup(provider);
-    }
+    await auth.signInWithRedirect(provider);
   } catch (e) {
     setStatus('error');
     showToast(`Error de login: ${e.message}`, 'error');
