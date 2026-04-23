@@ -33,7 +33,8 @@ describe('PLANES_PRECIO', () => {
 describe('addCliente / getClientes', () => {
   it('adds a client and retrieves it', async () => {
     const id = await addCliente({ nombre_contacto: 'Juan', telefono: '261-555-0001', negocio_nombre: 'Test Shop', rubro: 'comercio', plan: 'starter', precio: 99000, estado: 'prospecto' });
-    expect(id).toBeGreaterThan(0);
+    expect(typeof id).toBe('string');
+    expect(id.length).toBeGreaterThan(0);
     const all = await getClientes();
     expect(all).toHaveLength(1);
     expect(all[0].nombre_contacto).toBe('Juan');
