@@ -42,7 +42,12 @@ async function signIn() {
   setStatus('signing-in');
   try {
     const provider = new firebase.auth.GoogleAuthProvider();
-    await auth.signInWithRedirect(provider);
+    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+    if (isMobile) {
+      await auth.signInWithPopup(provider);
+    } else {
+      await auth.signInWithRedirect(provider);
+    }
   } catch (e) {
     setStatus('error');
     showToast(`Error de login: ${e.message}`, 'error');
